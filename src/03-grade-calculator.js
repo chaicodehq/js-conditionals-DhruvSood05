@@ -26,4 +26,29 @@
  */
 export function calculateGrade(score, hasExtraCredit) {
   // Your code here
+  let grade;
+  let newscore = score;
+
+  if (newscore < 0 || newscore > 100) {
+    return "INVALID";
+  }
+
+  if (hasExtraCredit) {
+    newscore = score + 5;
+    newscore = Math.min(newscore, 100);
+  }
+
+  if (newscore >= 90 && newscore <= 100) {
+    grade = "A";
+  } else if (newscore >= 80 && newscore <= 89) {
+    grade = "B";
+  } else if (newscore >= 70 && newscore <= 79) {
+    grade = "C";
+  } else if (newscore >= 60 && newscore <= 69) {
+    grade = "D";
+  } else {
+    grade = "F";
+  }
+
+  return grade;
 }
