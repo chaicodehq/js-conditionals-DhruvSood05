@@ -23,4 +23,35 @@
  */
 export function getTrafficAction(color) {
   // Your code here
+  // if (color.toLowerCase() === "green") {
+  //   console.log("GO");
+  // } else if (color.toLowerCase() === "yellow") {
+  //   console.log("SLOW DOWN");
+  // } else if (color.toLowerCase() === "red") {
+  //   console.log("STOP");
+  // } else if (color.toLowerCase() === "flashing red") {
+  //   console.log("STOP AND PROCEED WITH CAUTION");
+  // } else {
+  //   console.log("INVALID SIGNAL");
+  // }
+  let newColor = color.toLowerCase();
+  let action;
+  switch (newColor) {
+    case "green":
+      action = "GO";
+      break;
+    case "yellow":
+      action = "SLOW DOWN";
+      break;
+    case "red":
+      action = "STOP";
+      break;
+    case "flashing red":
+      action = "STOP AND PROCEED WITH CAUTION";
+      break;
+    default:
+      action = "INVALID SIGNAL";
+  }
+
+  return action;
 }
