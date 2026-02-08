@@ -32,4 +32,60 @@
  */
 export function calculateCoffeePrice(size, type, extras = {}) {
   // Your code here
+  if (size !== "small" && size !== "medium" && size !== "large") {
+    return -1;
+  }
+
+  if (
+    type !== "regular" &&
+    type !== "latte" &&
+    type !== "cappuccino" &&
+    type !== "mocha"
+  ) {
+    return -1;
+  }
+
+  let orderTotal = 0.0;
+
+  switch (size) {
+    case "small":
+      orderTotal += 3.0;
+      break;
+
+    case "medium":
+      orderTotal += 4.0;
+      break;
+
+    case "large":
+      orderTotal += 5.0;
+      break;
+  }
+
+  switch (type) {
+    case "regular":
+      orderTotal += 0.0;
+      break;
+
+    case "latte":
+      orderTotal += 1.0;
+      break;
+
+    case "cappuccino":
+      orderTotal += 1.5;
+      break;
+
+    case "mocha":
+      orderTotal += 2.0;
+      break;
+  }
+
+  if (extras.whippedCream) {
+    orderTotal += 0.5;
+  }
+
+  if (extras.extraShot) {
+    orderTotal += 0.75;
+  }
+
+  return orderTotal;
 }
